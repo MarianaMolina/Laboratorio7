@@ -44,4 +44,9 @@ public class EstudianteServicelmpl implements EstudianteService{
 		estudianteDAO.delete(codigoEstudiante);
 	}
 
+	@Override
+	public void update(Integer codigoEstudiante, Estudiante nuevoEstudiante) throws DataAccessException {
+		estudianteDAO.update(codigoEstudiante, nuevoEstudiante);
+	}
+
 }

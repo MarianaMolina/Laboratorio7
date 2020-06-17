@@ -31,18 +31,28 @@ public class MainController {
 		return mav;
 	}
 	
-	//pag editar
-	@RequestMapping (value = "/pagEditar", method = RequestMethod.POST)
-	public ModelAndView pagEdit(@RequestParam (value = "codigo") int id) {
+	//FORMULARIO DE EDITAR
+	@RequestMapping ("/pagEditar")
+	public ModelAndView pagEditar() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("FormEstudiante");
+		return mav;
+	}
+	
+	//editar
+	@RequestMapping (value = "/Editar", method = RequestMethod.POST)
+	public ModelAndView Edit(@Valid @ModelAttribute Estudiante nuevoEstudiante, BindingResult result, @RequestParam (value = "codigo") int id) {
+
 		ModelAndView mav = new ModelAndView();
 		List<Estudiante> estudiantes = null;
 		try {
-			estudianteService.delete(id);
+			estudianteService.update(id, nuevoEstudiante);
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 		}
 		
+		mav.addObject("estudiantes", estudiantes);
 		mav.setViewName("FormEstudiante");
 		return mav;
 	}

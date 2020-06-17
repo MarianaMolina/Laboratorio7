@@ -16,4 +16,6 @@ public interface EstudianteDAO {
 	
 	public void delete(Integer codigoEstudiante) throws DataAccessException;
 	
+	public void update(Integer codigoEstudiante, Estudiante nuevoEstudiante) throws DataAccessException;
+	
 }

@@ -60,6 +60,26 @@ public class EstudianteDAOlmpl implements EstudianteDAO {
 	}
 
 
+	@Override
+	public void update(Integer codigoEstudiante, Estudiante nuevoEstudiante) throws DataAccessException {
+		Estudiante estudiante = entityManager.find(Estudiante.class, codigoEstudiante);
+		
+		try {
+			if(codigoEstudiante == null) {
+				entityManager.persist(estudiante);
+			}
+			else {
+				entityManager.remove(estudiante);
+				entityManager.merge(nuevoEstudiante);
+				entityManager.flush();
+			}
+		}catch(Throwable e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+
 	
 	
 }

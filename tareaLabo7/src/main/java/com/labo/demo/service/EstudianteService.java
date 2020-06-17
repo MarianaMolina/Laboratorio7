@@ -15,6 +15,7 @@ public interface EstudianteService {
 	
 	public void delete(Integer codigoEstudiante) throws DataAccessException;
 	
+	public void update(Integer codigoEstudiante, Estudiante nuevoEstudiante) throws DataAccessException;
 	
 
 }
