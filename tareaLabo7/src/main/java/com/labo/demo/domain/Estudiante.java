@@ -15,7 +15,6 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import com.labo.demo.domain.Computadora;
 
 @Entity
 @Table
@@ -44,8 +43,6 @@ public class Estudiante {
 	@Column(name="estado")
 	private Boolean estado;
 	
-	@OneToMany(mappedBy ="estudiante", fetch = FetchType.EAGER)
-	private List<Computadora> computadora;
 	
 	//CONSTRUCTOR
 	public Estudiante() {
@@ -104,15 +101,6 @@ public class Estudiante {
 		this.estado = estado;
 	}
 
-	public List<Computadora> getComputadora() {
-		return computadora;
-	}
-
-	public void setComputadora(List<Computadora> computadora) {
-		this.computadora = computadora;
-	}
-	
-	
 	
 }
 

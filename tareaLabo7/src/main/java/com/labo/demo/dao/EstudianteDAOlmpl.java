@@ -58,8 +58,8 @@ public class EstudianteDAOlmpl implements EstudianteDAO {
 		entityManager.remove(estudiante);
 		
 	}
-	
-	
+
+
 	
 	
 }

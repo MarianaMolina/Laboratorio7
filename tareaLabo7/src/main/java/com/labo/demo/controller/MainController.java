@@ -31,6 +31,23 @@ public class MainController {
 		return mav;
 	}
 	
+	//pag editar
+	@RequestMapping (value = "/pagEditar", method = RequestMethod.POST)
+	public ModelAndView pagEdit(@RequestParam (value = "codigo") int id) {
+		ModelAndView mav = new ModelAndView();
+		List<Estudiante> estudiantes = null;
+		try {
+			estudianteService.delete(id);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		mav.setViewName("FormEstudiante");
+		return mav;
+	}
+	
+	
 	//un estudiante
 	@RequestMapping (value = "/mostrarEstudiante", method = RequestMethod.POST)
 	public ModelAndView findOne(@RequestParam (value = "codigo") int id) {

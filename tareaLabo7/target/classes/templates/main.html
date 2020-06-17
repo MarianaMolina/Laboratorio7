@@ -5,7 +5,14 @@
 <title>INICIO</title>
 </head>
 <body>
-
+	<h1>ESCUELA</h1>
+	
+	<br>
+	
+	<h2>Listado de estudiantes</h2>
+	
+	<br>
+	
 	<table>
 		<thead>
 			<th>Codigo</th>
@@ -26,12 +33,13 @@
 		</th:block>
 	</table>
 	
+	
 	<br>
 	
-	<form th:action ="@{/mostrarEstudiante}" method ="post">
-		<label>Buscar computadora por codigo de estudiante </label><input type="number" name="codigo"><br>
-		<input type="submit" value="Buscar">
+	<form th:action ="@{/pagEditar}" method="post">
+		<input type="number" name ="codigo">
+		<input type="submit" value = "EDITAR ESTUDIANTE">
 	</form>
-
+	
 </body>
 </html>
